@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="card text-center">
+    <div class="card-body">
+        <h1>Bienvenido a ¡El Sondeador! jajaja</h1>
+        <p>Aplicación de prueba creada con Django</p>
+        <a class="btn btn-dark" href="{% url 'sondeos:index' %}">
+            Ver los sondeos disponibles</a>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1 class="text-center mb-3">Preguntas del Sondeo</h1>
+{% if latest_question_list %}
+{% for question in latest_question_list %}
+<div class="card mb-3">
+    <div class="card-body">
+        <p class="lead">
+            {{question.question_text}}
+        </p>
+        <a href="{% url 'sondeos:detail' question.id %}"
+            class="btn btn-primary btn-sm">Vota ahora</a>
+        <a href="{% url 'sondeos:results' question.id %}"
+            class="btn btn-secondary btn-sm">Resultados</a>
+    </div>
+</div>
+{% endfor %}
+{% else %}
+<p>No hay sondeos disponibles</p>
+{% endif %}
+{% endblock %}
